@@ -30,3 +30,11 @@ test("should render an h1 role with a test id of `header-1` on it", () => {
   const headingElement = screen.getByTestId("header-1");
   expect(headingElement).toBeInTheDocument();
 });
+
+// FIND BY
+
+test("should render same text passed into title prop (using findBy)", async () => {
+  render(<Header title="My Header" />);
+  const headingElement = await screen.findByText(/My header/i);
+  expect(headingElement).toBeInTheDocument();
+});
