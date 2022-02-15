@@ -38,3 +38,11 @@ test("should render same text passed into title prop (using findBy)", async () =
   const headingElement = await screen.findByText(/My header/i);
   expect(headingElement).toBeInTheDocument();
 });
+
+// Query By
+
+test("expects not to find a dog text in the document", () => {
+  render(<Header title="My Header" />);
+  const headingElement = screen.queryByText(/dog/i);
+  expect(headingElement).not.toBeInTheDocument();
+});
