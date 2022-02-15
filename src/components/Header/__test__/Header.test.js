@@ -46,3 +46,9 @@ test("expects not to find a dog text in the document", () => {
   const headingElement = screen.queryByText(/dog/i);
   expect(headingElement).not.toBeInTheDocument();
 });
+
+test("expects not to find a dog text in the document", () => {
+  render(<Header title="My Header" />);
+  const headingElements = screen.getAllByRole("heading");
+  expect(headingElements.length).toBe(1);
+});
