@@ -10,7 +10,23 @@ const MockFollowersList = () => {
   );
 };
 
-describe("Header", () => {
+describe("FollowersList", () => {
+  beforeEach(() => {
+    console.log("RUNNING BEFORE EACH TEXT");
+  });
+
+  beforeAll(() => {
+    console.log("RAN ONCE BEFORE ALL TESTS");
+  });
+
+  afterEach(() => {
+    console.log("RUNNING AFTER EACH TEXT");
+  });
+
+  afterAll(() => {
+    console.log("RAN ONCE AFTER ALL TESTS");
+  });
+
   test("should render a follower element on the screen", async () => {
     render(<MockFollowersList />);
     const followerDivElement = await screen.findByTestId(/follower-item-0/i);
